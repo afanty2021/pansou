@@ -25,51 +25,96 @@ import (
 
 	// 以下是插件的空导入，用于触发各插件的init函数，实现自动注册
 	// 添加新插件时，只需在此处添加对应的导入语句即可
-	// _ "pansou/plugin/hdr4k"
-	// _ "pansou/plugin/pan666"
+	_ "pansou/plugin/ahhhhfs"
+	_ "pansou/plugin/aikanzy"
+	_ "pansou/plugin/alupan"
+	_ "pansou/plugin/ash"
+	_ "pansou/plugin/bixin"
+	_ "pansou/plugin/cldi"
+	_ "pansou/plugin/clmao"
+	_ "pansou/plugin/clxiong"
+	_ "pansou/plugin/cyg"
+	_ "pansou/plugin/daishudj"
+	_ "pansou/plugin/ddys"
+	_ "pansou/plugin/discourse"
+	_ "pansou/plugin/djgou"
+	_ "pansou/plugin/duoduo"
+	_ "pansou/plugin/dyyj"
+	_ "pansou/plugin/dyyjpro"
+	_ "pansou/plugin/erxiao"
+	_ "pansou/plugin/feikuai"
+	_ "pansou/plugin/fox4k"
+	_ "pansou/plugin/gaoqing888"
+	_ "pansou/plugin/gying"
+	_ "pansou/plugin/haisou"
+	_ "pansou/plugin/hdmoli"
+	_ "pansou/plugin/hdr4k"
+	_ "pansou/plugin/huban"
 	_ "pansou/plugin/hunhepan"
+	_ "pansou/plugin/javdb"
 	_ "pansou/plugin/jikepan"
-	_ "pansou/plugin/panwiki"
+	_ "pansou/plugin/jsnoteclub"
+	_ "pansou/plugin/jutoushe"
+	_ "pansou/plugin/kkmao"
+	_ "pansou/plugin/kkv"
+	_ "pansou/plugin/labi"
+	_ "pansou/plugin/leijing"
+	_ "pansou/plugin/libvio"
+	_ "pansou/plugin/lou1"
+	_ "pansou/plugin/meitizy"
+	_ "pansou/plugin/miaoso"
+	_ "pansou/plugin/mikuclub"
+	_ "pansou/plugin/mizixing"
+	_ "pansou/plugin/muou"
+	_ "pansou/plugin/nsgame"
+	_ "pansou/plugin/nyaa"
+	_ "pansou/plugin/ouge"
+	_ "pansou/plugin/pan666"
+	_ "pansou/plugin/panlian"
 	_ "pansou/plugin/pansearch"
 	_ "pansou/plugin/panta"
+	_ "pansou/plugin/panwiki"
+	_ "pansou/plugin/panyq"
+	_ "pansou/plugin/pianku"
+	_ "pansou/plugin/qingying"
+	_ "pansou/plugin/qiwei"
+	_ "pansou/plugin/qqpd"
+	_ "pansou/plugin/quark4k"
+	_ "pansou/plugin/quarksoo"
+	_ "pansou/plugin/qupanshe"
 	_ "pansou/plugin/qupansou"
+	_ "pansou/plugin/sdso"
+	_ "pansou/plugin/shandian"
+	_ "pansou/plugin/sousou"
 	_ "pansou/plugin/susu"
 	_ "pansou/plugin/thepiratebay"
-	_ "pansou/plugin/wanou"
-	_ "pansou/plugin/xuexizhinan"
-	_ "pansou/plugin/panyq"
-	_ "pansou/plugin/zhizhen"
-	_ "pansou/plugin/labi"
-	_ "pansou/plugin/muou"
-	_ "pansou/plugin/ouge"
-	_ "pansou/plugin/shandian"
-	_ "pansou/plugin/duoduo"
-	_ "pansou/plugin/huban"
-	_ "pansou/plugin/cyg"
-	_ "pansou/plugin/erxiao"
-	_ "pansou/plugin/miaoso"
-	_ "pansou/plugin/fox4k"
-	_ "pansou/plugin/pianku"
-	_ "pansou/plugin/clmao"
-	_ "pansou/plugin/wuji"
-	_ "pansou/plugin/cldi"
-	_ "pansou/plugin/xiaozhang"
-	_ "pansou/plugin/libvio"
-	_ "pansou/plugin/leijing"
-	_ "pansou/plugin/xb6v"
-	_ "pansou/plugin/xys"
-	_ "pansou/plugin/ddys"
-	_ "pansou/plugin/hdmoli"
-	_ "pansou/plugin/yuhuage"
 	_ "pansou/plugin/u3c3"
-	_ "pansou/plugin/javdb"
-	_ "pansou/plugin/clxiong"
-	_ "pansou/plugin/jutoushe"
-	_ "pansou/plugin/sdso"
-	_ "pansou/plugin/xiaoji"
+	_ "pansou/plugin/wanou"
+	_ "pansou/plugin/weibo"
+	_ "pansou/plugin/wuji"
+	_ "pansou/plugin/xb6v"
+	_ "pansou/plugin/xdpan"
 	_ "pansou/plugin/xdyh"
-	_ "pansou/plugin/haisou"
-	_ "pansou/plugin/bixin"
+	_ "pansou/plugin/xiaoji"
+	_ "pansou/plugin/xiaozhang"
+	_ "pansou/plugin/xinjuc"
+	_ "pansou/plugin/xuexizhinan"
+	_ "pansou/plugin/xys"
+	_ "pansou/plugin/yiove"
+	_ "pansou/plugin/ypfxw"
+	_ "pansou/plugin/yuhuage"
+	_ "pansou/plugin/yulinshufa"
+	_ "pansou/plugin/yunsou"
+	_ "pansou/plugin/melost"
+	_ "pansou/plugin/zhizhen"
+	_ "pansou/plugin/zxzj"
+
+	_ "pansou/plugin/duanjuw"
+	_ "pansou/plugin/jupansou"
+	_ "pansou/plugin/lingjisp"
+	_ "pansou/plugin/panzun"
+	_ "pansou/plugin/quarktv"
+    _ "pansou/plugin/yunso"
 )
 
 // 全局缓存写入管理器
@@ -192,18 +237,18 @@ func startServer() {
 	// 优先保存缓存数据到磁盘（数据安全第一）
 	// 增加关闭超时时间，确保数据有足够时间保存
 	shutdownTimeout := 10 * time.Second
-	
+
 	if globalCacheWriteManager != nil {
 		if err := globalCacheWriteManager.Shutdown(shutdownTimeout); err != nil {
 			log.Printf("缓存数据保存失败: %v", err)
 		}
 	}
-	
+
 	// 额外确保内存缓存也被保存（双重保障）
 	if mainCache := service.GetEnhancedTwoLevelCache(); mainCache != nil {
 		if err := mainCache.FlushMemoryToDisk(); err != nil {
 			log.Printf("内存缓存同步失败: %v", err)
-		} 
+		}
 	}
 
 	// 设置关闭超时时间
@@ -224,9 +269,28 @@ func printServiceInfo(port string, pluginManager *plugin.PluginManager) {
 	fmt.Printf("服务器启动在 http://localhost:%s\n", port)
 
 	// 输出代理信息
-	if config.AppConfig.UseProxy {
-		fmt.Printf("使用SOCKS5代理: %s\n", config.AppConfig.ProxyURL)
-	} else {
+	hasProxy := false
+	if config.AppConfig.ProxyURL != "" {
+		proxyType := "代理"
+		if strings.HasPrefix(config.AppConfig.ProxyURL, "socks5://") {
+			proxyType = "SOCKS5代理"
+		} else if strings.HasPrefix(config.AppConfig.ProxyURL, "http://") {
+			proxyType = "HTTP代理"
+		} else if strings.HasPrefix(config.AppConfig.ProxyURL, "https://") {
+			proxyType = "HTTPS代理"
+		}
+		fmt.Printf("使用%s (PROXY): %s\n", proxyType, config.AppConfig.ProxyURL)
+		hasProxy = true
+	}
+	if config.AppConfig.HTTPProxyURL != "" {
+		fmt.Printf("使用HTTP代理 (HTTP_PROXY/http_proxy): %s\n", config.AppConfig.HTTPProxyURL)
+		hasProxy = true
+	}
+	if config.AppConfig.HTTPSProxyURL != "" {
+		fmt.Printf("使用HTTPS代理 (HTTPS_PROXY/https_proxy): %s\n", config.AppConfig.HTTPSProxyURL)
+		hasProxy = true
+	}
+	if !hasProxy {
 		fmt.Println("未使用代理")
 	}
 
@@ -258,7 +322,7 @@ func printServiceInfo(port string, pluginManager *plugin.PluginManager) {
 	if config.AppConfig.EnableCompression {
 		fmt.Printf("响应压缩已启用: 最小压缩大小=%d字节\n",
 			config.AppConfig.MinSizeToCompress)
-	} 
+	}
 
 	// 输出GC配置信息
 	fmt.Printf("GC配置: 触发阈值=%d%%, 内存优化=%v\n",

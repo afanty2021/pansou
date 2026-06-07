@@ -130,6 +130,17 @@ func SearchHandler(c *gin.Context) {
 		if ext == nil {
 			ext = make(map[string]interface{})
 		}
+		
+		// 处理filter参数，JSON格式
+		var filter *model.FilterConfig
+		filterStr := c.Query("filter")
+		if filterStr != "" && filterStr != " " {
+			filter = &model.FilterConfig{}
+			if err := jsonutil.Unmarshal([]byte(filterStr), filter); err != nil {
+				c.JSON(http.StatusBadRequest, model.NewErrorResponse(400, "无效的filter参数格式: "+err.Error()))
+				return
+			}
+		}
 
 		req = model.SearchRequest{
 			Keyword:      keyword,
@@ -141,6 +152,7 @@ func SearchHandler(c *gin.Context) {
 			Plugins:      plugins,
 			CloudTypes:   cloudTypes, // 添加cloud_types到请求中
 			Ext:          ext,
+			Filter:       filter,
 		}
 	} else {
 		// POST方式：从请求体获取
@@ -200,7 +212,12 @@ func SearchHandler(c *gin.Context) {
 		return
 	}
 
-	// 返回结果
+	// 应用过滤器
+	if req.Filter != nil {
+		result = applyResultFilter(result, req.Filter, req.ResultType)
+	}
+
+	// 包装SearchResponse到标准响应格式中
 	response := model.NewSuccessResponse(result)
 	jsonData, _ := jsonutil.Marshal(response)
 	c.Data(http.StatusOK, "application/json", jsonData)
